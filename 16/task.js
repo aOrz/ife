@@ -15,9 +15,9 @@ var aqiData = {};
 function addAqiData() {
 	var city = document.getElementById('aqi-city-input').value;
 	var num = document.getElementById('aqi-value-input').value;
-	var alphaReg = /^[\u4e00-\u9fa5aa-zA-z]+$/i,
-    numReg = /^[1-9]*$/i,
-    nullReg = /[(^\s+)(\s+$)]/g;
+	var alphaReg = /^[\u4e00-\u9fa5a-z]+$/i,
+    numReg = /^\d+$/,
+    nullReg = /^\s+|\s+$/g;
     city = city.replace(nullReg,'');
     num = num.replace(nullReg,'');
     if (!alphaReg.test(city)||!numReg.test(num)) {
